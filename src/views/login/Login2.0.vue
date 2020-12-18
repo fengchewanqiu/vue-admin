@@ -57,11 +57,14 @@ export default {
     };
     var checkCode = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error("验证码不能为空"));
-      }
       setTimeout(() => {
         // 请求验证码丙自动刷新
       }, 1000);
+        return callback(new Error("验证码不能为空"));
+      }else{
+        callback();
+      }
+    
     };
     return {
       ruleForm: {
@@ -82,9 +85,9 @@ export default {
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
-        console.log(valid)
         if (valid) {
-          alert("submit!");
+          console.log(11111,this.ruleForm)
+          alert("submit!");        
         } else {
           console.log("error submit!!");
           return false;

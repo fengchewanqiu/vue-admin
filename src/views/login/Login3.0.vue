@@ -52,7 +52,7 @@ export default {
       code: "",
       })
     let rules = reactive({
-     // username:[{ required: true, message: '请输入', trigger: 'blur' }],// [{ validator: checkUser, trigger: "blur" }],
+     // username:[{required: true,message: "请输入名称",trigger: "blur"},{type: 'string',pattern: /^\/./,message: '请填写正确路径',trigger: 'blur'}], 不使用自定义函数 参数一空，参数二类别规则
       username:[ {validator: checkUser,trigger:'blur'}],
       password: [{ validator: checkPass, trigger: "blur" }],
       code: [{ validator: checkCode, trigger: "blur" }],

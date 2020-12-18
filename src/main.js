@@ -8,6 +8,9 @@ Vue.config.productionTip = false;//阻止启动生产消息 会在调试窗口�
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
+//引入vue3.0特性 composition-api
+import VueCompositionApi from '@vue/composition-api'; 
+Vue.use(VueCompositionApi);
 
 new Vue({
   router,
